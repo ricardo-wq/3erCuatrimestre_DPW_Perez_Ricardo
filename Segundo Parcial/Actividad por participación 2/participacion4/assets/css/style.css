@@ -1,0 +1,159 @@
+/* =========================================
+   Estilos Base (Mobile First)
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* --- Componentes --- */
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.nav ul {
+    list-style: none;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column; /* Móvil: enlaces apilados verticalmente */
+    gap: 1rem;
+}
+
+.nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #3498db;
+}
+
+.container {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-articulos {
+    display: grid;
+    grid-template-columns: 1fr; /* Móvil: 1 sola columna */
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* =========================================
+    ACTIVIDAD POR PARTICIPACIÓN:
+   ========================================= */
+
+/* PARTE 1 1: Celulares pequeños 
+   Breakpoint sugerido: max-width: 480px 
+   
+   Nota teórica: Como usamos "Mobile First", el CSS base ya es para celulares. 
+   Usaremos max-width aquí para afectar solo a pantallas MUY pequeñas.
+   
+   Objetivos:
+   1. Reduce el padding de .header a 1rem.
+   2. Reduce el tamaño de fuente del h1 a 1.5rem (tamaño por defecto es más grande).
+   3. Reduce el padding de las .card a 1rem.
+*/
+
+@media (max-width: 480px) {
+
+    .header {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+}
+
+
+
+
+/* PARTE 2: Pantallas medianas (Tablets) 
+   Breakpoint sugerido: min-width: 768px 
+   
+   Objetivos:
+   1. Convierte la navegación (.nav ul) en una fila horizontal (flex-direction: row) y céntrala.
+   2. Modifica .grid-articulos para que muestre 2 columnas del mismo tamaño.
+*/
+
+
+@media(min-width:768px){
+
+.nav ul{
+flex-direction: row;
+justify-content: center;
+}
+
+.grid-articulos{
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+
+
+/* PARTE 3: Pantallas grandes (Escritorio) 
+   Breakpoint sugerido: min-width: 1024px 
+   
+   Objetivos:
+   1. Modifica .header para que use display: flex. Alinea los elementos al centro verticalmente (align-items) y separa el h1 del nav a los extremos (justify-content: space-between).
+   2. Modifica .nav ul para quitar el padding-top.
+   3. Modifica .grid-articulos para que muestre 4 columnas del mismo tamaño.
+*/
+
+
+@media(min-width:1024px){
+.header{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.nav ul{
+
+    padding-top: 0;
+}
+
+.grid-articulos{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+}
