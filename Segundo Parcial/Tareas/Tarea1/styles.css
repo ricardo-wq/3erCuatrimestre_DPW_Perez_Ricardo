@@ -1,0 +1,311 @@
+/* --- SISTEMA DE DISEÑO --- */
+:root {
+  --fuente: 'Outfit', sans-serif;
+  --fondo-gradiente: linear-gradient(135deg, #f6f8fc 0%, #eef2f7 100%);
+  --blanco-puro: #ffffff;
+  --texto-oscuro: #0f172a;
+  --texto-suave: #64748b;
+  
+  /* Colores oficiales de las letras de Campeche */
+  --c-rosa: #E2127A;
+  --c-amarillo: #F9D103;
+  --c-naranja: #F37023;
+  --c-aqua: #00AFA7;
+  --c-rojo: #E31B23;
+  --c-azul: #1B365D;
+  --c-morado: #6C2B85;
+  --c-verde: #4FA83A;
+}
+
+/* --- REINICIO GENERAL --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente);
+  background: var(--fondo-gradiente);
+  color: var(--texto-oscuro);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- CABECERA DE CRISTAL (GLASSMORPHISM) --- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 1.25rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 30px rgba(15, 23, 42, 0.015);
+}
+
+#logo {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  color: var(--c-azul);
+  user-select: none;
+}
+
+/* Asignación cromática de las letras */
+.c-rosa { color: var(--c-rosa); }
+.c-amarillo { color: var(--c-amarillo); }
+.c-naranja { color: var(--c-naranja); }
+.c-aqua { color: var(--c-aqua); }
+.c-rojo { color: var(--c-rojo); }
+.c-azul { color: var(--c-azul); }
+.c-morado { color: var(--c-morado); }
+.c-verde { color: var(--c-verde); }
+
+/* Menú Minimalista */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--texto-suave);
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.25s ease;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2.5px;
+  background-color: var(--c-rosa);
+  border-radius: 4px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+}
+
+.menu a:hover {
+  color: var(--texto-oscuro);
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* --- CUERPO PRINCIPAL --- */
+main {
+  max-width: 1200px;
+  width: 90%;
+  margin: 4rem auto;
+  flex-grow: 1;
+}
+
+/* Sección Hero / Presentación */
+.presentacion {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.presentacion h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: var(--c-azul);
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+
+.presentacion p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--texto-suave);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* --- SECCIÓN DESTINOS --- */
+#destinos {
+  margin-bottom: 5rem;
+}
+
+#destinos h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--c-azul);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* Rejilla de tarjetas fluida y moderna */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Diseño de Tarjeta Premium */
+.tarjeta {
+  background: var(--blanco-puro);
+  padding: 3rem 2.25rem;
+  border-radius: 28px;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: flex;
+  text-align: center;
+}
+
+.tarjeta h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--texto-oscuro);
+  margin-bottom: 1rem;
+}
+
+.tarjeta p {
+  color: var(--texto-suave);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Efecto Hover dinámico */
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.06);
+  border-color: rgba(0, 175, 167, 0.2);
+}
+
+/* Estilo para la Tarjeta Destacada (Edzná) */
+.tarjeta.destacado {
+  background: linear-gradient(180deg, #ffffff 0%, #fff6fa 100%);
+  border-color: rgba(226, 18, 122, 0.15);
+}
+
+.tarjeta.destacado:hover {
+  border-color: rgba(226, 18, 122, 0.3);
+}
+
+.tarjeta.destacado h3 {
+  color: #77063c;
+}
+
+.etiqueta-destacada {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  background: rgba(226, 18, 122, 0.1);
+  color: var(--c-rosa);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+}
+
+/* --- DATO CURIOSO (DISEÑO CLEAN CALLOUT) --- */
+.informacion {
+  background: var(--blanco-puro);
+  border-radius: 28px;
+  padding: 2.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  margin-bottom: 2rem;
+}
+
+.icono-curioso {
+  font-size: 1.75rem;
+  background: #f1f5f9;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.contenido-curioso h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-naranja);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.contenido-curioso p {
+  color: var(--texto-suave);
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+/* --- PIE DE PÁGINA --- */
+footer {
+  background: var(--blanco-puro);
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  padding: 2rem;
+  text-align: center;
+}
+
+#copyright {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  font-weight: 400;
+}
+
+/* --- ADAPTACIÓN MÓVIL --- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+  
+  .menu {
+    gap: 1.5rem;
+  }
+  
+  .presentacion h2 {
+    font-size: 2.25rem;
+  }
+  
+  main {
+    margin: 2.5rem auto;
+  }
+  
+  .informacion {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+
+img{
+
+
+border-radius: 10%;
+align-items: center;
+}
