@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo Pérez - Landing Page</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados: SIEMPRE después del CDN de Bootstrap -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 1. NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#hero">Ricardo Pérez</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contenido">Sobre mí</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tarjetas">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 2. HERO -->
+<header id="hero" class="text-white text-center py-5" style="background-color:#3498db;">
+    <div class="container py-5">
+        <h2 class="display-5 fw-bold">Bienvenido a mi portafolio</h2>
+        <p class="lead">Soy estudiante de Ingeniería en Programación y me apasiona el desarrollo web.</p>
+        <a href="#contacto" class="btn btn-light btn-lg fw-bold">Contáctame</a>
+    </div>
+</header>
+
+<!-- 3. SOBRE MÍ -->
+<section id="contenido" class="py-5 bg-white">
+    <div class="container text-center">
+        <h2 class="section-title mb-4">Sobre mí</h2>
+        <p class="mx-auto" style="max-width:700px;">
+            Hola, soy Ricardo Pérez, estudiante de 3er cuatrimestre de Ingeniería en Programación.
+            Me interesa el desarrollo web, la programación orientada a objetos y las bases de datos.
+        </p>
+        <p>Actualmente estoy aprendiendo y practicando con las siguientes tecnologías:</p>
+        <ul class="list-unstyled mx-auto" style="max-width:500px;">
+            <li>HTML y CSS</li>
+            <li>JavaScript</li>
+            <li>Java y Python</li>
+            <li>SQL y bases de datos relacionales</li>
+            <li>Fundamentos de redes y sistemas</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 4. PROYECTOS (rejilla + tarjetas) -->
+<section id="tarjetas" class="py-5" style="background-color:#f0f0f0;">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title mb-5">Mis Proyectos</h2>
+        </div>
+        <div class="row g-4">
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title h5">Tienda en línea</h3>
+                        <p class="card-text">Proyecto de e-commerce básico con catálogo de productos y carrito de compras, desarrollado con HTML, CSS y JavaScript.</p>
+                        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalTienda">
+                            Ver más
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title h5">Sistema de tareas</h3>
+                        <p class="card-text">Aplicación de escritorio en Java para administrar tareas diarias con fecha límite y prioridad.</p>
+                        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalTareas">
+                            Ver más
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title h5">Consulta del clima</h3>
+                        <p class="card-text">Script en Python que consulta el clima actual de cualquier ciudad usando una API gratuita.</p>
+                        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalClima">
+                            Ver más
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title h5">Gestor de contactos</h3>
+                        <p class="card-text">Aplicación de escritorio en Java conectada a una base de datos SQL para administrar contactos personales.</p>
+                        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#modalContactos">
+                            Ver más
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 5. CONTACTO -->
+<section id="contacto" class="py-5 bg-white">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title mb-4">Contacto</h2>
+        </div>
+        <form id="formulario" novalidate class="mx-auto" style="max-width:500px;">
+            <div class="mb-3">
+                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+                <div class="invalid-feedback" id="err-nombre"></div>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Tu correo electrónico">
+                <div class="invalid-feedback" id="err-email"></div>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" id="mensaje" rows="5" placeholder="Tu mensaje"></textarea>
+                <div class="invalid-feedback" id="err-mensaje"></div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+        </form>
+        <div id="mensaje-exito" class="alert alert-success text-center mx-auto mt-3" style="max-width:500px; display:none;">
+            ¡Mensaje enviado correctamente! Te responderé pronto.
+        </div>
+    </div>
+</section>
+
+<!-- 6. FOOTER -->
+<footer class="bg-dark text-light text-center py-3">
+    <p class="mb-0">&copy; 2026 Ricardo Pérez &nbsp;|&nbsp; <a class="link-light" href="mailto:ricardoperez131014@gmail.com">ricardoperez131014@gmail.com</a></p>
+</footer>
+
+<!-- MODALES DE PROYECTOS -->
+<div class="modal fade" id="modalTienda" tabindex="-1" aria-labelledby="modalTiendaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTiendaLabel">Tienda en línea</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <p>Proyecto de e-commerce básico con catálogo de productos, carrito de compras y cálculo de totales, desarrollado con HTML, CSS y JavaScript puro, sin frameworks.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalTareas" tabindex="-1" aria-labelledby="modalTareasLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTareasLabel">Sistema de tareas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <p>Aplicación de escritorio en Java para administrar tareas diarias, con fecha límite, prioridad y persistencia de datos en un archivo local.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalClima" tabindex="-1" aria-labelledby="modalClimaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalClimaLabel">Consulta del clima</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <p>Script en Python que consulta el clima actual de cualquier ciudad usando una API gratuita y muestra temperatura, humedad y condición del cielo.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalContactos" tabindex="-1" aria-labelledby="modalContactosLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalContactosLabel">Gestor de contactos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <p>Aplicación de escritorio en Java conectada a una base de datos SQL para registrar, editar y eliminar contactos personales.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Bundle JS (necesario para navbar, modales, etc.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JAVASCRIPT: validación del formulario -->
+<script>
+    document.getElementById('formulario').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var nombre = document.getElementById('nombre');
+        var email = document.getElementById('email');
+        var mensaje = document.getElementById('mensaje');
+        var valido = true;
+
+        // Limpiar errores anteriores
+        ['nombre', 'email', 'mensaje'].forEach(function (id) {
+            document.getElementById(id).classList.remove('is-invalid');
+            document.getElementById('err-' + id).textContent = '';
+        });
+
+        if (nombre.value.trim() === '') {
+            nombre.classList.add('is-invalid');
+            document.getElementById('err-nombre').textContent = 'Por favor ingresa tu nombre.';
+            valido = false;
+        }
+
+        if (email.value.trim() === '' || !email.value.includes('@')) {
+            email.classList.add('is-invalid');
+            document.getElementById('err-email').textContent = 'Ingresa un correo válido.';
+            valido = false;
+        }
+
+        if (mensaje.value.trim() === '') {
+            mensaje.classList.add('is-invalid');
+            document.getElementById('err-mensaje').textContent = 'El mensaje no puede estar vacío.';
+            valido = false;
+        }
+
+        if (valido) {
+            document.getElementById('formulario').style.display = 'none';
+            document.getElementById('mensaje-exito').style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>

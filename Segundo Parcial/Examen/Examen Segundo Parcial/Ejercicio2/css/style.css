@@ -1,0 +1,22 @@
+/* Estilos personalizados: se cargan DESPUÉS del CDN de Bootstrap en el <head> */
+
+.section-title {
+    display: inline-block;
+    padding-bottom: 6px;
+    border-bottom: 3px solid #3498db;
+    color: #2c3e50;
+}
+
+/* Sobrescribe el color de fondo de los botones .btn-primary
+   usando un selector de mayor especificidad (.btn.btn-primary),
+   sin recurrir a !important */
+.btn.btn-primary {
+    background-color: #6f2dbd;
+    border-color: #6f2dbd;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+    background-color: #5a2399;
+    border-color: #5a2399;
+}
